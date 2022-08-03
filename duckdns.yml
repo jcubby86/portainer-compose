@@ -1,0 +1,13 @@
+version: "2.1"
+services:
+  duckdns:
+    image: lscr.io/linuxserver/duckdns:latest
+    container_name: duckdns
+    environment:
+      - TZ=America/Denver
+      - SUBDOMAINS=${DOMAIN_1}
+      - TOKEN=${TOKEN}
+      - LOG_FILE=true #optional
+    volumes:
+      - /portainer/duckdns:/config
+    restart: unless-stopped
