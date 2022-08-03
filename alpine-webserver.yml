@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  web:
+    image: node:alpine
+    command: /etc/data/startup.sh
+    volumes:
+      - /portainer/webapp:/etc/data #Change this
+    ports:
+      - "3003:3003"
